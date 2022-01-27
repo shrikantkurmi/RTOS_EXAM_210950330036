@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/home/shrikantkurmiesd/esp/esp-idf/RTOS_EXAM/RTOS_EXAM_210950330036/RTOS_EXAM/question1/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
