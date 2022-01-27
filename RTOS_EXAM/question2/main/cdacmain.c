@@ -1,26 +1,66 @@
 #include <stdio.h>
 #include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
 #include <freertos/timers.h>
+TimerHandle_t timer;
 
-TimerHandle_t motor_timer_handle;
-int count=0;
-
-void TurnMotorOFF(TimerHandle_t xTimer)
+void timerfunction(TimerHandle_t xTimer)
 {
-    count++;
-    printf("Turning motor off!\n");
-    if(count==5)
+    printf("timer callback function\n");
+}
+void task_1(void *pv)
+{
+    while(1)
     {
-        xTimerStop(xTimer,0);
+        printf("TASK 1 RUNNING\n");
+        vTaskDelay(1000/portTICK_PERIOD_MS);
     }
+   
+}
+void task_2(void *pv)
+{
+    while(1)
+    {
+        printf("TASK 2 RUNNING\n");
+        vTaskDelay(2000/portTICK_PERIOD_MS);
+    }
+
+    
+}
+void task_3(void *pv)
+{
+    uint32_t count=0;
+    while(1)
+    {
+        count++;
+        printf("TASK 3 RUNNING\n");
+        vTaskDelay(5000/portTICK_PERIOD_MS);
+        if(count==2)
+        {
+             xTimerStart(timer,0);  //timer triggered after 10000 ms
+        }
+                         
+    }
+    
 }
 void app_main()
 {
-    motor_timer_handle=xTimerCreate("MotorOFF",pdMS_TO_TICKS(2000),pdTRUE,NULL,TurnMotorOFF);
-    xTimerStart(motor_timer_handle,0);
-    while(1)
+    BaseType_t result;
+    result=xTaskCreate(task_1,"task_1",2048,NULL,5,NULL);
+    if(result==pdTRUE)
     {
-        printf("main task\n");
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        printf("task 1 created\n");
     }
+    result=xTaskCreate(task_2,"task_2",2048,NULL,6,NULL);
+    if(result==pdTRUE)
+    {
+        printf("task 2 created\n");
+    }
+    result=xTaskCreate(task_3,"task_3",2048,NULL,7,NULL);
+    if(result==pdTRUE)
+    {
+        printf("task 3 created\n");
+    }
+    timer=xTimerCreate("timer_1",pdMS_TO_TICKS(10),pdFALSE,NULL,timerfunction);    //oneshot software timer
+    
 }
